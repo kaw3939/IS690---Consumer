@@ -13,7 +13,7 @@
 				<label for="txt_1">Event Name:</label> <input value="Geddys Birthday Party" type="text" id="txt_1" name="txt_1"><br/>
 				<label for="txt_2">Location:</label> <input value="Geddys House" type="text" id="txt_2" name="txt_2"><br/>
 				<label for="txt_3">Time:</label> <input value="10:30pm" type="text" id="txt_3" name="txt_3"><br/>
-				<button id="btn_createEvent">Moose</button><br/>
+				<button id="btn_createEvent">Create Event</button><br/>
 				
 			</div>
 			<div id="panel2" class="panel" style="display:none;">
