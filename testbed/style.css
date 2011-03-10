@@ -1,0 +1,12 @@
+fieldset#options{ 
+	border:1px solid silver; 
+	width:300px;
+}
+	#options div{
+		padding:10px;	
+	}
+
+select{
+	min-width:250px;	
+}
+		
