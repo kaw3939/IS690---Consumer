@@ -1,0 +1,17 @@
+#main_panel{
+	border:1px solid #000;
+	width:300px;
+	height:300px;
+	overflow:hidden;
+}
+
+#panel_slide{
+	width:10000px;
+}
+
+.panel{
+	float:left;
+	width:280px;
+	height:280px;	
+	padding:10px;
+}
