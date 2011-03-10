@@ -4,7 +4,7 @@
 	<title>GET/POST Request TestBed App</title>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>   
-	<script type="text/javascript" src="scripts/js/jqueryui/jquery-ui-1.8.10.custom.min.js"></script>   
+	<script type="text/javascript" src="scripts/jqueryui/js/jquery-ui-1.8.10.custom.min.js"></script>   
 </head>
 <body>
 
