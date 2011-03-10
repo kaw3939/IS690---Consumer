@@ -1,0 +1,1 @@
+This is specifically for testing AJAX calls.
