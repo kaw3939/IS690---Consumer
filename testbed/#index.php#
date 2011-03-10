@@ -68,7 +68,6 @@
 		
 		$('#btnprocess_html').click(function(){
 			$('#result_html').html('').html('Response HTML:<br/>'+$('#request_result').val());
-			
 		});
 		
 		$('#btnpush').click(function(){
