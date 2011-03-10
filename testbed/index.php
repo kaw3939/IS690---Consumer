@@ -12,8 +12,10 @@
 		<fieldset id="options">
 			<div>
 				Request Type:<br/>
-				<input type="radio" name="method" id="method_get" value="get" checked> <label for="method_get">GET</label>
-				<input type="radio" name="method" id="method_post" value="post"/> <label for="method_post">POST</label>
+				<input type="radio" name="method" id="method" value="get" checked> GET
+				<input type="radio" name="method" id="method" value="post"/> POST
+				<input type="radio" name="method" id="method" value="put"/> PUT
+				<input type="radio" name="method" id="method" value="delete"/> DELETE
 			</div>
 			<div>
 				<label for="request_url">URL:</label><br/>
@@ -33,11 +35,21 @@
 				<input type="text" id="param_value">
 				<input type="button" value="Add Parameter" id="add_parameter">
 			</div>
+			<div>
+				<input type="button" id="btnpush" value="Send Request"/>
+			</div>
 		</fieldset>
 	</form>
+	<br/><br/>
+	<div>
+		Response Text:<br/>
+		<textarea id="request_result"></textarea>
+	</div>	
+	
 <script language="javascript">
 	$(document).ready(function(){
 		$('#add_parameter').click(function(){
+			//field checking
 			if ( ($('#param_name').val()=='') || ($('#param_value').val()=='') ){
 				alert('Enter all values');
 			}else{
@@ -47,8 +59,26 @@
 			}
 		});
 		
+		//remove selected options from parameters list
 		$('#delete_parameter').click(function(){
 			$('#parameters option:selected').remove();	
+		});
+		
+		$('#btnpush').click(function(){
+			var params="";
+			if ($('#parameters option').length>0){				
+				$('#parameters option').each(function(){
+					params+=$(this).text() + "=" + $(this).val() + "&";		
+				});
+				alert(params);
+			}
+			var reqtype=$('#method:checked').val();
+			var url=$('#request_url').val();
+			$.ajax({
+				type: reqtype,
+				url: url,
+				data: params
+			});
 		});
 	});
 </script>
