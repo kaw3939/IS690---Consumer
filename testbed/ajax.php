@@ -7,9 +7,9 @@
 		Sample return data below.
 	*/
 	$_event_details=array(
-		'name'		=>	$_GET['name'],
-		'location'	=>	$_GET['location'],
-		'time'		=>	$_GET['time'],
+		'name'		=>	isset($_GET['name']) ? $_GET['name'] : 'null',
+		'location'	=>	isset($_GET['location']) ? $_GET['location'] : 'null',
+		'time'		=>	isset($_GET['time']) ? $_GET['time'] : 'null',
 	);
 	
 	$_status=array(

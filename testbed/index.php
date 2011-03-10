@@ -45,7 +45,11 @@
 		<input type="button" id="btnprocess_html" value="Parse HTML"/>
 		<input type="button" id="btnprocess_json" value="Parse JSON"/>
 		<br/><br/><br/>
-		<div id="result_html" style="border:1px solid red;"></div>
+		Response HTML:<br/>
+		<div id="result_html" style="border:1px solid silver;width:600px;height:400px;"></div>
+		
+		Decoded JSON:<br/>
+		<div id="result_json" style="border:1px solid silver;width:600px;height:400px;overflow:scroll;"></div>
 	</div>	
 	
 <script language="javascript">
@@ -67,7 +71,16 @@
 		});
 		
 		$('#btnprocess_html').click(function(){
-			$('#result_html').html('').html('Response HTML:<br/>'+$('#request_result').val());
+			$('#result_html').html('').html($('#request_result').val());
+		});
+		
+		$('#btnprocess_json').click(function(){
+			$.get('json_process.php',{
+				json: $('#request_result').val()		
+			},
+			function(data){
+				$('#result_json').html('<pre>'+data+'</pre>');	
+			});
 		});
 		
 		$('#btnpush').click(function(){
@@ -87,6 +100,9 @@
 				data: params,
 				success: function(response){
 					$('#request_result').val(response);	
+				},
+				error: function (response){
+					alert('Error sending request: '+response.responseText);	
 				}
 			});
 		});
