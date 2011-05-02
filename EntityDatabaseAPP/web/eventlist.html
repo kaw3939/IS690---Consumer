@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>People List</title>
+<title>Events List</title>
 <meta http-equiv="Content-Type" content="text/html; charset=uft-8" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/popform.css" />
@@ -21,8 +21,8 @@
     </h1>
     <div id="navigation" class="ui-tabs">
     	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-        	<li class="ui-state-default ui-corner-top menu"><a href="#">People Management</a><a class="submenu1 border-style1" id="create" href="#">Create People</a></li>
-            <li class="ui-state-default ui-corner-top menu"><a href="eventlist.html">Event Management</a></li>
+        	<li class="ui-state-default ui-corner-top menu"><a href="peoplelist.html">People Management</a></li>
+            <li class="ui-state-default ui-corner-top menu"><a href="#">Event Management</a><a class="submenu1 border-style1" id="create" href="#">Create Events</a></li>
         </ul>
     </div>
 </div>
@@ -34,28 +34,22 @@
         </div>
     
 	<div id="content">
-        <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false"><span class="ui-icon ui-icon-triangle-1-e"></span><a href="#" style="padding-left:1.7em;" tabindex="-1">People List</a></h3>
+        <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab" aria-expanded="false"><span class="ui-icon ui-icon-triangle-1-e"></span><a href="#" style="padding-left:1.7em;" tabindex="-1">Events List</a></h3>
         
-<!--        <table width="100%" border="0" cellpadding="10" cellspacing="10" id="pListTable">
+<!--        <table width="100%" border="0" cellpadding="10" cellspacing="10" id="eListTable">
             <tr class="border-style1">
-                <th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Action</th>
+                <th>Start Date</th><th>End Date</th><th>Action</th>
             </tr>
             <tr class="border-style1">
-                <td>aa</td><td>bb</td><td>abc@ip.com</td><td>1234567890</td><td><a href="#" class="edit">Edit</a>&nbsp;&nbsp;<a href="#" class="delete">Delete</a></td>
+                <td>2011-12-31 00:00:00</td><td>2011-12-31 11:59:00</td><td><a href="#" class="edit">Edit</a>&nbsp;&nbsp;<a href="#" class="delete">Delete</a></td>
             </tr>
             <tr class="border-style1">
-                <td>aa</td><td>bb</td><td>abc@ip.com</td><td>1234567890</td><td><a href="#" class="edit">Edit</a>&nbsp;&nbsp;<a href="#" class="delete">Delete</a></td>
-            </tr>
-            <tr class="border-style1">
-                <td>aa</td><td>bb</td><td>abc@ip.com</td><td>1234567890</td><td><a href="#" class="edit">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td>
-            </tr>
-            <tr class="border-style1">
-                <td>aa</td><td>bb</td><td>abc@ip.com</td><td>1234567890</td><td><a href="#" class="edit">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td>
-            </tr>
-            <tr class="border-style1"><td>aa</td><td>bb</td><td>abc@ip.com</td><td>1234567890</td><td><a href="#" class="edit">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td></tr>
+                <td>2011-12-31 00:33:00</td><td>2011-12-31 11:12:00</td><td><a href="#" class="edit">Edit</a>&nbsp;&nbsp;<a href="#" class="delete">Delete</a></td>
+            </tr>         
+            <tr class="border-style1"><td>2011-12-31 00:56:00</td><td>2011-12-31 11:59:00</td><td><a href="#" class="edit">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></td></tr>
         </table>-->
-        <div id="peoplelist"></div>
-        <p style="margin-top:20px;"><a href="#" id="add_people" class="ui-state-default ui-corner-all dialog_link"><span class="ui-icon ui-icon-newwin"></span>Add</a></p>
+        <div id="eventslist"></div>
+        <p style="margin-top:20px;"><a href="#" id="add_event" class="ui-state-default ui-corner-all dialog_link"><span class="ui-icon ui-icon-newwin"></span>Add</a></p>
     </div>    
     <div id="sideBar">
   	 <form method="post" action="#">
@@ -86,33 +80,27 @@
 </div>
 <!--foot part end-->
  <!-- ui-dialog -->
-		<div id="dialog_add" title="Personal Information">
-			<form class="popForm" name="addPeopleForm" id="addPeopleForm" action="#">
+		<div id="dialog_add" title="Event Information">
+			<form class="popForm" name="addEventForm" id="addEventForm" action="#">
             	<dl>
-                	<dt>First Name:</dt>
-                    <dd><input type="text" width="30" name="form_add_fname" id="form_add_fname" /></dd>
-                    <dt>Last Name:</dt>
-                    <dd><input type="text" width="30" name="form_add_lname" id="form_add_lname" /></dd>
-                    <dt>Phone:</dt>
-                    <dd><input type="text" width="30" name="form_add_phone" id="form_add_phone" /></dd>
-                    <dt>Email:</dt>
-                    <dd><input type="text" width="30" name="form_add_email" id="form_add_email" /></dd>
+                	<dt>Start Date:</dt>
+                    <dd><input type="text" width="30" name="form_add_sdate" id="form_add_sdate" /></dd>
+                    <dt>End Date:</dt>
+                    <dd><input type="text" width="30" name="form_add_edate" id="form_add_edate" /></dd>
+                    
                 </dl>
             </form>
 		</div>
         
     <!-- ui-dialog -->
-		<div id="dialog_update" title="Personal Information">
-			<form class="popForm" name="updatePeopleForm" id="updatePeopleForm" action="#">
+		<div id="dialog_update" title="Event Information">
+			<form class="popForm" name="updateEventForm" id="updateEventForm" action="#">
             	<dl>
-                	<dt>First Name:</dt>
-                    <dd><input type="text" width="30" value="default" name="form_update_fname" id="form_update_fname" /></dd>
-                    <dt>Last Name:</dt>
-                    <dd><input type="text" width="30" value="default" name="form_update_lname" id="form_update_lname" /></dd>
-                    <dt>Phone:</dt>
-                    <dd><input type="text" width="30" value="1234567890" name="form_update_phone" id="form_update_phone" /></dd>
-                    <dt>Email:</dt>
-                    <dd><input type="text" width="30" value="default@default.com" name="form_update_email" id="form_update_email" /></dd>
+                	<dt>Start Date:</dt>
+                    <dd><input type="text" width="30" value="default" name="form_update_sdate" id="form_update_sdate" /></dd>
+                    <dt>End Date:</dt>
+                    <dd><input type="text" width="30" value="default" name="form_update_edate" id="form_update_edate" /></dd>
+                    
                 </dl>
             </form>
 		</div>
@@ -136,7 +124,7 @@
             </form>
 		</div>  
 <script type="text/javascript">
-var baseURL = "http://localhost:8080/EntityDatabaseDAL/entity/person/";
+var baseURL = "http://localhost:8080/EntityDatabaseDAL/entity/event/";
 
 function reInitialize(target){
         $.getJSON(baseURL+'list/all/', function(data) {
@@ -144,15 +132,13 @@ function reInitialize(target){
 
             $('a.edit').click(function(){
                 document.currentEntityId = this.getAttribute("value");
-                
+                //alert(document.currentEntityId);
                 if (data.length > 0) {
                   for(i=0;i<data.length;i++) {
                     var item = data[i];
-                    if(item.EntityId == document.currentEntityId){
-                        $('#form_update_fname').val(item.FirstName);
-                        $('#form_update_lname').val(item.LastName);
-                        $('#form_update_email').val(item.Email);
-                        $('#form_update_phone').val(item.Phone);
+                    if(item.EntityID == document.currentEntityId){
+                        $('#form_update_sdate').val(item.StartDate);
+                        $('#form_update_edate').val(item.EndDate);
 
                         $('#dialog_update').dialog('open');
                     }
@@ -160,10 +146,8 @@ function reInitialize(target){
                 }
 //another implementation
 //                $.getJSON(baseURL+entityId, function(item) {
-//                    $('#form_update_fname').val(item.FirstName);
-//                    $('#form_update_lname').val(item.LastName);
-//                    $('#form_update_email').val(item.Email);
-//                    $('#form_update_phone').val(item.Phone);
+//                    $('#form_update_sdate').val(item.StartDate);
+//                    $('#form_update_edate').val(item.EndDate);
 //                })
                 return false;
             });
@@ -172,10 +156,10 @@ function reInitialize(target){
                 var entityId = this.getAttribute("value");
                 var rowNum=this.parentNode.parentNode.rowIndex;
                 $.ajax({
-                  url: baseURL+entityId,
+                  url: baseURL + entityId,
                   type: 'DELETE',
                   success: function(msg){
-                      document.getElementById('pListTable').deleteRow(rowNum);
+                      document.getElementById('eListTable').deleteRow(rowNum);
                       $('#messageBox').html(msg);
                       $('#messageBox').show();
                       window.setTimeout("$('#messageBox').fadeOut('slow');", 2000);
@@ -189,9 +173,9 @@ function reInitialize(target){
 
 function refreshlist(resources, target){
         //table head
-        var str = '<table width="100%" border="0" cellpadding="10" cellspacing="10" id="pListTable">';
+        var str = '<table width="100%" border="0" cellpadding="10" cellspacing="10" id="eListTable">';
         str += '<tr class="border-style1">';
-        str += '<th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Action</th>';
+        str += '<th>Start Date</th><th>End Date</th><th>Action</th>';
         str += '</tr>';
          
           var items  = resources;
@@ -201,14 +185,11 @@ function refreshlist(resources, target){
               for(j=0;j<items.length;j++) {
                 str += '<tr class="border-style1">';
                 var item = items[j];
-                str += '<td>'+item.FirstName+'</td>';
-                str += '<td>'+item.LastName+'</td>';
-                str += '<td>'+item.Email+'</td>';
-                str += '<td>'+item.Phone+'</td>';
+                str += '<td>'+item.StartDate+'</td>';
+                str += '<td>'+item.EndDate+'</td>';
                 str += '<td>';
-                
-                str += '<a href="#" class="edit" value="'+item.EntityId+'">'+'Edit'+'</a>&nbsp;&nbsp;';
-                str += '<a href="#" class="delete" value="'+item.EntityId+'">'+'Delete'+'</a>';
+                str += '<a href="#" class="edit" value="'+item.EntityID+'">'+'Edit'+'</a>&nbsp;&nbsp;';
+                str += '<a href="#" class="delete" value="'+item.EntityID+'">'+'Delete'+'</a>';
                 str += '</td>';
                 str += '</tr>';
               }
@@ -226,7 +207,7 @@ function refreshlist(resources, target){
 
 $(document).ready(function(){
 /*Data init part*/
-        var target = document.getElementById('peoplelist');
+        var target = document.getElementById('eventslist');
         document.currentEntityId = null;
 
         reInitialize(target);
@@ -256,10 +237,8 @@ $(document).ready(function(){
                 modal:true,
                 buttons: {
                         "Submit": function() {
-                            var content = '{"FirstName":"' + $('#form_add_fname').val();
-                                content += '", "LastName":"'+$('#form_add_lname').val();
-                                content += '", "Phone":"'+$('#form_add_phone').val();
-                                content += '", "Email":"'+$('#form_add_email').val();
+                            var content = '{"StartDate":"' + $('#form_add_sdate').val();
+                                content += '", "EndDate":"'+$('#form_add_edate').val();
                                 content += '"}';
                                 //send the get request
                                 $.ajax({
@@ -283,7 +262,7 @@ $(document).ready(function(){
                                 $(this).dialog("close");
                         },
                         "Reset": function() {
-                                document.getElementById("addPeopleForm").reset();
+                                document.getElementById("addEventForm").reset();
                         }
                 }
         });
@@ -295,10 +274,8 @@ $(document).ready(function(){
                 modal:true,
                 buttons: {
                         "Update": function() {
-                                var content = '{"FirstName":"' + $('#form_update_fname').val();
-                                    content += '", "LastName":"'+$('#form_update_lname').val();
-                                    content += '", "Phone":"'+$('#form_update_phone').val();
-                                    content += '", "Email":"'+$('#form_update_email').val();
+                                var content = '{"StartDate":"' + $('#form_update_sdate').val();
+                                    content += '", "EndDate":"'+$('#form_update_edate').val();
                                     content += '"}';
 
                                 //send the get request
@@ -333,7 +310,7 @@ $(document).ready(function(){
         });
 
         // Add Dialog Link
-        $('#add_people').click(function(){
+        $('#add_event').click(function(){
                 $('#dialog_add').dialog('open');
                 return false;
         });

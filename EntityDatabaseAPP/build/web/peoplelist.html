@@ -11,10 +11,6 @@
 <script type="text/javascript" src="./jqueryui180/js/jquery-ui-1.8.10.custom.min.js"></script>
 <!-- JS_DECLARE_START - DO NOT REMOVE-->
 <script type="text/javascript" src="./rest/Support.js"></script>
-<!--<script type='text/javascript' src='./rest/entitydatabasedal/EntityDatabaseDAL.js'></script>
-<script type='text/javascript' src='./rest/entitydatabasedal/User.js'></script>
-<script type='text/javascript' src='./rest/entitydatabasedal/Person.js'></script>
-<script type='text/javascript' src='./rest/entitydatabasedal/Event.js'></script>-->
 <!-- JS_DECLARE_END - DO NOT REMOVE-->
 </head>
 <body>
@@ -26,7 +22,7 @@
     <div id="navigation" class="ui-tabs">
     	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
         	<li class="ui-state-default ui-corner-top menu"><a href="#">People Management</a><a class="submenu1 border-style1" id="create" href="#">Create People</a></li>
-            <li class="ui-state-default ui-corner-top menu"><a href="#">Event Management</a><a class="submenu1 border-style1" href="#">Create Events</a></li>
+            <li class="ui-state-default ui-corner-top menu"><a href="eventlist.html">Event Management</a></li>
         </ul>
     </div>
 </div>
@@ -140,8 +136,10 @@
             </form>
 		</div>  
 <script type="text/javascript">
+var baseURL = "http://localhost:8080/EntityDatabaseDAL/entity/person/";
+
 function reInitialize(target){
-        $.getJSON('http://localhost:8080/EntityDatabaseDAL/entity/person/list/all/', function(data) {
+        $.getJSON(baseURL+'list/all/', function(data) {
             refreshlist(data, target);
 
             $('a.edit').click(function(){
@@ -161,7 +159,7 @@ function reInitialize(target){
                   }
                 }
 //another implementation
-//                $.getJSON('http://localhost:8080/EntityDatabaseDAL/entity/person/'+entityId, function(item) {
+//                $.getJSON(baseURL+entityId, function(item) {
 //                    $('#form_update_fname').val(item.FirstName);
 //                    $('#form_update_lname').val(item.LastName);
 //                    $('#form_update_email').val(item.Email);
@@ -174,7 +172,7 @@ function reInitialize(target){
                 var entityId = this.getAttribute("value");
                 var rowNum=this.parentNode.parentNode.rowIndex;
                 $.ajax({
-                  url: "http://localhost:8080/EntityDatabaseDAL/entity/person/"+entityId,
+                  url: baseURL+entityId,
                   type: 'DELETE',
                   success: function(msg){
                       document.getElementById('pListTable').deleteRow(rowNum);
@@ -265,7 +263,7 @@ $(document).ready(function(){
                                 content += '"}';
                                 //send the get request
                                 $.ajax({
-                                  url: "http://localhost:8080/EntityDatabaseDAL/entity/person/",
+                                  url: baseURL,
                                   type: 'PUT',
                                   contentType: 'application/json',
                                   processData: false,
@@ -279,8 +277,8 @@ $(document).ready(function(){
                                 });
 
                                 //another implementation
-                                //rjsSupport.put("http://localhost:8080/EntityDatabaseDAL/entity/person/", "application/json", content);
-                                //reInitialize(target);
+                                //rjsSupport.put(baseURL, "application/json", content);
+                                reInitialize(target);
 
                                 $(this).dialog("close");
                         },
@@ -303,11 +301,10 @@ $(document).ready(function(){
                                     content += '", "Email":"'+$('#form_update_email').val();
                                     content += '"}';
 
-                                  //alert(document.currentEntityId);
                                 //send the get request
                                 if(document.currentEntityId){
                                     $.ajax({
-                                      url: "http://localhost:8080/EntityDatabaseDAL/entity/person/"+document.currentEntityId,
+                                      url: baseURL+document.currentEntityId,
                                       type: 'POST',
                                       contentType: 'application/json',
                                       processData: false,

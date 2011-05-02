@@ -79,7 +79,7 @@ var rjsSupport = {
             return null;
         }
         try {
-            netscape.security.PrivilegeManager.enablePrivilege ("UniversalBrowserRead");
+            netscape.security.PrivilegeManager.enablePrivilege ("UniversalPreferencesRead");
         } catch (e) {
             //this.debug("Permission UniversalBrowserRead denied.");
         }

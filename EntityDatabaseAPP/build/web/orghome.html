@@ -20,8 +20,8 @@
     
     <div id="navigation" class="ui-tabs">
     	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-        	<li class="ui-state-default ui-corner-top menu"><a href="./peoplelist.html">People Management</a><a class="submenu1 border-style1" id="create" href="#">Create People</a></li>
-            <li class="ui-state-default ui-corner-top menu"><a href="#">Event Management</a><a class="submenu1 border-style1" href="#">Create Events</a></li>
+        	<li class="ui-state-default ui-corner-top menu"><a href="peoplelist.html">People Management</a></li>
+            <li class="ui-state-default ui-corner-top menu"><a href="eventlist.html">Event Management</a></li>
         </ul>
     </div>
 </div>
@@ -32,23 +32,19 @@
   <div id="content">
   <h2 class="demoHeaders">My Events</h2>
   	<div id="accordion">
-			<div>
+<!--			<div>
 				<h3><a href="#">1/12-2/12&nbsp;&nbsp;Career fair&nbsp;&nbsp;NJIT</a></h3>
-				<div>
-                <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog_add">Participants</span></div>
-                        <div class="border-style1">
-                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
-                    </div>
-                    <div class="border-style1">
-                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
-                    </div>
-                    <div class="border-style1">
-                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
-                    </div>
-                    <div class="border-style1">
-                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
-                    </div>
-               </div>
+                                <div>
+				<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog_add">Participants</span></div>
+                                        <div class="border-style1">
+                                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
+                                    </div>
+                                    <div class="border-style1">
+                                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
+                                    </div>
+
+                               </div>
+				
 			</div>
 			<div>
 				<h3><a href="#"><span>1/12</span>-<span>2/12</span>&nbsp;&nbsp;<span>Career fair</span>&nbsp;&nbsp;<span>NJIT</span></a></h3>
@@ -56,11 +52,25 @@
 			</div>
 			<div>
 				<h3><a href="#"><span>1/12</span>-<span>2/12</span>&nbsp;&nbsp;<span>Career fair</span>&nbsp;&nbsp;<span>NJIT</span></a></h3>
-				<div>Nam dui erat, auctor a, dignissim quis.</div>
-			</div>
-		</div>
+                                <div>
+                                <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog_add">Participants</span></div>
+                                        <div class="border-style1">
+                                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
+                                    </div>
+                                    <div class="border-style1">
+                                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
+                                    </div>
+                                    <div class="border-style1">
+                                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
+                                    </div>
+                                    <div class="border-style1">
+                                        <p class="text-center">Dali Ding&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>
+                                    </div>
+                               </div>
+			</div>-->
+	</div>
   
-    <p class="text-right"><a href="#">More Events...</a></p>
+    <p class="text-right"><a href="eventlist.html">More Events...</a></p>
   </div>
   <div id="sideBar">
   	 <form method="post" action="#">
@@ -106,22 +116,7 @@
             </form>
 		</div>
         
-<!-- ui-dialog -->
-		<div id="dialog_add" title="New Person Information">
-			<form class="popForm" name="addPeopleForm" id="addPeopleForm" action="#">
-            	<dl>
-                	<dt>First Name:</dt>
-                    <dd><input type="text" width="30" /></dd>
-                    <dt>Last Name:</dt>
-                    <dd><input type="text" width="30" /></dd>
-                    <dt>Phone:</dt>
-                    <dd><input type="text" width="30" /></dd>
-                    <dt>Email:</dt>
-                    <dd><input type="text" width="30" /></dd>
-                </dl>
-            </form>
-		</div>
-        
+       
 <!-- ui-dialog -->
 		<div id="dialog_register" title="New User Information">
 			<form class="popForm" name="registerForm" id="registerForm" action="#">
@@ -142,68 +137,154 @@
             </form>
 		</div>        
 <script type="text/javascript">
-$(function(){
-		   // New User Dialog			
-				$('#dialog_register').dialog({
-					autoOpen: false,
-					width: 600,
-					modal:true,
-					buttons: {
-						"Submit": function() { 
-							//do data submition function here
-							$(this).dialog("close"); 
-						}, 
-						"Reset": function() { 
-							//reset form here
-						} 
-					}
-				});
-				
-		   // Add Dialog			
-				$('#dialog_add').dialog({
-					autoOpen: false,
-					width: 600,
-					modal:true,
-					buttons: {
-						"Submit": function() { 
-							//do data submition function here
-							$(this).dialog("close"); 
-						}, 
-						"Reset": function() { 
-							//reset form here
-						} 
-					}
-				});
-				
-		   // Update Dialog			
-				$('#dialog_detail').dialog({
-					autoOpen: false,
-					width: 600,
-					modal:true
-				});
-				
-				
-				// New User Dialog Link
-				$('#create_user').click(function(){
-					$('#dialog_register').dialog('open');
-					return false;
-				});
-				
-				// Update Dialog Link
-				$('a.detail').click(function(){
-					$('#dialog_detail').dialog('open');
-					return false;
-				});
-				
-				// Add Dialog Link
-				$('a#create').click(function(){
-					$('#dialog_add').dialog('open');
-					return false;
-				});
-				
-			// Accordion
-				$("#accordion").accordion({ header: "h3" });
-		   })
+var baseURL = "http://localhost:8080/EntityDatabaseDAL/entity/event/";
+
+function reInitialize(target){
+        $.getJSON(baseURL+'list/all/', function(data) {
+            refreshlist(data, target);
+
+            $('a.detail').click(function(){
+                
+                return false;
+            });
+
+        });
+}
+
+function refreshlist(resources, target){
+        //table head
+        var str = '';
+
+          var events  = resources;
+          
+          if (events != undefined) {
+            if (events.length > 0) {
+              for(j=0;j<events.length;j++) {
+                var event = events[j];
+                var idno = "parlist_"+event.EntityID;
+                str += '<div>';
+                str += '<h3><a href="#">'+event.StartDate+'-'+event.EndDate+'</a></h3>';
+                str += '<div id="parlist_'+event.EntityID+'"></div>';
+                str += '</div>';
+              }
+              //output the layer
+                target.innerHTML = str;
+
+                //participants check
+              //set global count
+              document.count = 0;
+
+                for(j=0;j<events.length;j++) {
+                    var event = events[j];
+                    var idno = "parlist_"+event.EntityID;
+
+                    $.ajax({
+                        url:baseURL+event.EntityID+"/person/list/all/",
+                        dataType: 'json',
+                        context: $('#parlist_'+event.EntityID),
+                        async: true,
+                        success: function(data) {
+                            var person_str = '';
+                            var persons = data;
+                            if (persons != undefined) {
+                                if (persons.length > 0){
+                                    //output header
+                                    person_str += '<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog_add">Participants</span></div>';
+                                    //serach result
+                                    for(j=0;j<persons.length;j++) {
+                                        var person = persons[j];
+                                        person_str += '<div class="border-style1">';
+                                        person_str += '<p class="text-center">'+person.FirstName+' '+person.LastName+'&nbsp;&nbsp;<a class="detail" href="#">See details</a></p>';
+                                        person_str += '</div>';
+
+                                    }
+                                }
+                                else
+                                    person_str += "No participents";
+                            }
+                            else
+                                person_str += "NULL value for person";
+
+                            $(this).html(person_str);
+                            
+                            document.count ++;
+                            if(document.count == events.length){
+                                // Accordion
+                                $("#accordion").accordion({ header: "h3" });
+                            }
+                        }
+                    });
+                }
+            } else {
+              str += 'No events detected';
+              target.innerHTML = str;
+            }
+          } else {
+            str += 'No events, please check the url: <a href="'+baseURL+'" target="_blank">'+baseURL+'</a>.<br/>Set proxy if RESTful web service is not running on the same domain as this application.';
+            target.innerHTML = str;
+          }
+       
+}
+
+$(document).ready(function(){
+/*Data init part*/
+var target = document.getElementById("accordion");
+        document.currentEntityId = null;
+
+        reInitialize(target);
+// New User Dialog			
+            $('#dialog_register').dialog({
+                    autoOpen: false,
+                    width: 600,
+                    modal:true,
+                    buttons: {
+                            "Submit": function() {
+                                    //do data submition function here
+                                    $(this).dialog("close");
+                            },
+                            "Reset": function() {
+                                    //reset form here
+                            }
+                    }
+            });
+
+// Add Dialog			
+            $('#dialog_add').dialog({
+                    autoOpen: false,
+                    width: 600,
+                    modal:true,
+                    buttons: {
+                            "Submit": function() {
+                                    //do data submition function here
+                                    $(this).dialog("close");
+                            },
+                            "Reset": function() {
+                                    //reset form here
+                            }
+                    }
+            });
+
+// Update Dialog			
+            $('#dialog_detail').dialog({
+                    autoOpen: false,
+                    width: 600,
+                    modal:true
+            });
+
+
+            // New User Dialog Link
+            $('#create_user').click(function(){
+                    $('#dialog_register').dialog('open');
+                    return false;
+            });
+
+            // Update Dialog Link
+            $('a.detail').click(function(){
+                    $('#dialog_detail').dialog('open');
+                    return false;
+            });
+
+})
 </script>
 </body>
 </html>
